@@ -21,6 +21,12 @@ window.addEventListener("keydown", function(event) {
   }
 }, false);
 
+var getNextUrl = function() {
+    var list    = window.location.getParameter('list'),
+        videoId = $('#'+nextButtonId).get(0).getAttribute('data-tooltip-text').match(/ytimg\.com\/vi\/(.*)?\//)[1];
+    return 'http://www.youtube.com/watch?v='+videoId+'&list='+list+'';
+}
+
 function nextVideo() {
     console.log($('#' + nextButtonId));
     $('#' + nextButtonId).click();
@@ -29,6 +35,9 @@ function nextVideo() {
 
 function prevVideo() {
     console.log($('#' + prevButtonId));
+    var videoId = $('#' + prevButtonId).get(0).getAttribute('data-tooltip-text').match(/ytimg\.com\/vi\/(.*)?\//)[1];
+    
+    console.log('video id:',videoId);
     $('#' + prevButtonId).click();
     console.log('Well this is emberessing. Nothing happened');
 }
