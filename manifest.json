@@ -1,0 +1,19 @@
+{
+  "name": "YouTube Keys",
+  "version": "0.1",
+  "description": "The missing keyboard shortcuts for YouTube",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.youtube.com/*",
+        "https://*.youtube.com/*"
+      ],
+        "js": ["jquery.min.js", "inject.js"]
+    }
+  ],
+  "permissions": [
+    "http://www.youtube.com/*",
+    "http://*.youtube.com/*",
+    "https://*.youtube.com/*"
+  ]
+}
