@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+<title>YouTube Keyk</title>
+<script src="jquery.min.js"></script>
+<script>
+  /* Redirect the sending tab to a given url*/
+  chrome.extension.onRequest.addListener(function(request, sender) {
+      //TODO: get the url from tabs using sender.tab.id instead of using youtube.com prefix
+      chrome.tabs.update(sender.tab.id, {url: "http://www.youtube.com" + request.redirect});
+  });
+</script>
+</head>

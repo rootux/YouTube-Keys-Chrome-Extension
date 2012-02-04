@@ -11,7 +11,9 @@
         "js": ["jquery.min.js", "inject.js"]
     }
   ],
+  "background_page": "background.html",
   "permissions": [
+    "tabs",
     "http://www.youtube.com/*",
     "http://*.youtube.com/*",
     "https://*.youtube.com/*"
