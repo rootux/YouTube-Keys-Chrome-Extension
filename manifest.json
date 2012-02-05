@@ -11,7 +11,7 @@
         "http://*.youtube.com/*",
         "https://*.youtube.com/*"
       ],
-        "js": ["jquery.min.js", "tubekeys.js"]
+        "js": ["jquery.min.js", "tubeKeys.js"]
     }
   ],
   "background_page": "background.html",
