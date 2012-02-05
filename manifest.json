@@ -2,6 +2,9 @@
   "name": "YouTube Keys",
   "version": "0.1",
   "description": "The missing keyboard shortcuts for YouTube",
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
   "content_scripts": [
     {
       "matches": [
@@ -14,7 +17,6 @@
   "background_page": "background.html",
   "permissions": [
     "tabs",
-    "http://www.youtube.com/*",
     "http://*.youtube.com/*",
     "https://*.youtube.com/*"
   ]
