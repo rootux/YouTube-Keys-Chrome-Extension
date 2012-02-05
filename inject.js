@@ -1,38 +1,46 @@
-var playlistBar = '.playlist-bar-item-playing';
-
-window.addEventListener("keydown", function(event) {
-  var mediaNextTrackKey = 176;
-  var mediaPrevTrackKey = 177;
-  var mediaStopTrackKey = 178;
-  var mediaPlayPauseTrackKey = 179;
-  var mKey = 77; // Used for debugging - 'm' key
-  var nKey = 78; // Used for debugging - 'n' key
-
-  if(event.keyCode == mKey) {
-    nextVideo();
-  }else if(event.keyCode == nKey) {
-    prevVideo();
-  }else if (event.keyCode == mediaNextTrackKey) {
-   nextVideo();
-  }else if (event.keyCode == mediaPrevTrackKey) {
-   prevVideo();
-  } else if (event.keyCode == mediaStopTrackKey) {
-   // handle stop
-  } else if (event.keyCode == mediaPlayPauseTrackKey) {
-   // handle pause / play
-  }
-}, false);
-
-function nextVideo() {
-    var nextUrl = $(playlistBar).next().find('a').attr('href');
-    redirectUrl(nextUrl);
-}
-
-function prevVideo() {
-    var prevUrl = $(playlistBar).prev().find('a').attr('href');
-    redirectUrl(prevUrl);
-}
-
-function redirectUrl(url) {
-  chrome.extension.sendRequest({redirect: url})
-}
+/*globals chrome*/
+(function($, global, undefined) {
+    var settings = {
+		playlistCurrentVideo: '.playlist-bar-item-playing',
+		mediaMap: {
+			next      : 176,
+			prev      : 177,
+			stop      : 178,
+			playPause : 179,
+			debugKey  : 77 /* lower case 'm' */ 
+		}
+	}, 
+	redirect  = function(url) {
+		chrome.extension.sendRequest({redirect: url});
+	},
+	nextVideo = function() {
+		var nextUrl = $(settings.playlistBar).next().find('a').attr('href');
+    	redirect(nextUrl);
+	},
+	prevVideo = function() {
+		var prevUrl = $(settings.playlistBar).prev().find('a').attr('href');
+    	redirect(prevUrl);
+	},
+	stopVideo = function() {},
+	playVideo = function() {};
+	
+	$('window').keyUp(function(event) {
+		var keyCode = event.keyCode;
+		switch(keyCode) {
+			case settings.debugKey: 
+			break;
+			case settings.playPause:
+				playVideo();
+			break;
+			case settings.stop:
+				stopVideo();
+			break;
+			case settings.next:
+				nextVideo();
+			break;
+			case settings.prev:
+				prevVideo();
+			break;
+		}
+	});
+} (jQuery, window));
