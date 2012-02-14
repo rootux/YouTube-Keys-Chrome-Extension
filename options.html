@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Tube Keys Options</title></head>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+    <body onload="tubekeys.settings.onLoad();">
+      <div id="wrapper">
+        <div id="header">
+          <a href="http://goo.gl/xDxzD" title="Navigate to the extension site" target="_blank">
+           <img src="icon48.png"/></a>
+          <span id="title-text"></span>
+        </div>
+        <div id="main">
+          <div id="shortcuts">
+            <h2>Set the Keyboard Shortcuts:</h2>
+            <span>Set keys combination to control youtube</span>
+            <div>
+              <p>Next song</p>
+              <button id="nextKey" onclick="tubekeys.settings.registerHotkey('next',this.id,'nextKeyMessage')" >Set Keyboard Combination</button>
+              <div id="nextKeyMessage" />
+            </div>
+            <div>
+              <p>Previous song</p>
+              <button id="prevKey" onclick="tubekeys.settings.registerHotkey('previous',this.id,'prevKeyMessage')" >Set Keyboard Combination</button>
+              <div id="prevKeyMessage" />
+            </div>
+          </div>
+          <button onclick="tubekeys.settings.saveOptions()">Save</button>
+        </div>
+      </div>
+  </body>
+</html>
