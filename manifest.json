@@ -1,6 +1,6 @@
 {
   "name": "Tube Keys",
-  "version": "0.3",
+  "version": "0.61",
   "description": "The missing keyboard shortcuts for YouTube",
   "icons": { "16": "icon16.png",
            "48": "icon48.png",
@@ -14,11 +14,12 @@
         "js": ["jquery.min.js", "tubeKeys.js"]
     }
   ],  
-  "background_page": "background.html",
+  "background": "background.html",
   "options_page": "options.html",
   "permissions": [
     "tabs",
     "http://*.youtube.com/*",
     "https://*.youtube.com/*"
-  ]
+  ],
+  "manifest_version": 2
 }
