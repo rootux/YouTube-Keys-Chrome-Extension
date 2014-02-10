@@ -23,3 +23,6 @@ Some copyright info
 The extension is licensed under the MIT license, feel invited to fork, port and transmogrify all parts of it.
 
 The icons I've used as promotional images were a collage, and include some of the work by @deleket (Jojo Mendoza, twitter.com/deleket) such as the next, prev, pause, stop buttons. The background keyboard is work by rg1024 (http://openclipart.org/user-detail/rg1024).
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rootux/youtube-keys-chrome-extension/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
